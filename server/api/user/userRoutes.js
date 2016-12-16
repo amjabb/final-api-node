@@ -7,9 +7,9 @@ var router = require('express').Router();
 //So if you have same URL but with different HTTP OP such as POST,GET etc
 //Then use route() to remove redundant code.
 router.route('/')
-  .get(function(req, res){
-    console.log('Hey from user!!');
-    res.send({ok: true});
+  .get(function(req, res, next){
+  	if (err) return next(err);
+    res.sendStatus(500);
   });
 
 module.exports = router;

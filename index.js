@@ -5,7 +5,7 @@
 // automatically require the index.js on the root
 
 // setup config first before anything by requiring it
-var port         = process.env.PORT || 8080; 
+var port         = process.env.PORT || 3000; 
 var app = require('./server/server');
 
 app.listen(port);
