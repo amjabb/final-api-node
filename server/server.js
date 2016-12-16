@@ -21,6 +21,18 @@ mongoose.connect(config.db.url);
 //into  api module .
 app.use('/api/', api);
 
+//Handle errors when opening and 
+//connectiong to the database
+var db = mongoose.connection;
+
+db.on("error", function(err){
+	console.error("connection error:", err);
+});
+
+db.once("open", function(){
+	console.log("db connection successful");
+});
+
 //Set up error handling code so that API
 //dynamically handles 404 resource not found
 //responses and 500 server side error responses

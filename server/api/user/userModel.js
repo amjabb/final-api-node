@@ -6,7 +6,18 @@ var UserSchema = new Schema({
     type: String,
     unique: true,
     required: true
+  },
+  address: {
+  	type: String,
+  	unique: true,
+  	required: true
   }
 });
 
-module.exports = mongoose.model('user', UserSchema);
+UserSchema.method("update", function(updates, callback) {
+	Object.assign(this, updates);
+	this.save(callback);
+});
+
+var User = mongoose.model('user', UserSchema)
+module.exports.User = User;
