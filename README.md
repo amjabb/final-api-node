@@ -1,6 +1,6 @@
+REST API
 
-
- The list given below is an overview of the routes you will require, what they will do, and the HTTP Verb used to access it.
+ The list given below is an overview of the routes this API will use, what they will do, and the HTTP Verb used to access it.
 
 Route
 HTTP verb
